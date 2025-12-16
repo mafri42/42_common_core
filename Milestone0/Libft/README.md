@@ -1,6 +1,6 @@
 This project has been created as part of the 42 curriculum by masacco.
 ***
-# LIBFT
+# 📚 LIBFT
 ***
 ## Table of Contents
 1. [Description](#Description)
@@ -10,7 +10,7 @@ This project has been created as part of the 42 curriculum by masacco.
 
 ---
 
-## Description
+## 📝 Description
 
 The **`libft`** project is the first major task in the 42 curriculum. Its primary **goal** is to implement a personal static C library (`libft.a`) containing a diverse collection of self-written functions.
 
@@ -22,7 +22,7 @@ The project requires recreating many essential standard C library (`libc`) funct
 
 ---
 
-## Instructions(meglio solo h2, gli altri sono ancora piu piccoli)
+## 🛠️ Instructions
 
 To compile the library, navigate to the root directory and use the provided `Makefile`:
 
@@ -37,12 +37,12 @@ cc -Wall -Wextra -Werror -lbsd your_file.c libft.a
 ```
 ---
 
-## Resources
+## 🤖 Resources
 
 The official Man Pages for standard C library functions (man 3 <function_name>) were the definitive source for understanding expected behavior and return values.
 
 
-## Structure
+## 🔗 Structure
 
 The libft.a contains over 50 functions, categorized by their purpose:
 
