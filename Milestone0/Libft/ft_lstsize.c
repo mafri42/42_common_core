@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:13:28 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/05 16:15:35 by masacco          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:11:53 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	len;
 
 	len = 0;
-	while (lst)
+	while (lst != NULL)
 	{
 		len++;
 		lst = lst->next;

@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:12:35 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/06 17:14:01 by masacco          ###   ########.fr       */
+/*   Updated: 2025/12/16 19:18:58 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*new_node;
-	t_list	*new_content;
 
-	if (!lst || !f || !del)
+	if (lst == NULL || f == NULL)
 		return (NULL);
 	new_lst = NULL;
-	while (lst)
+	while (lst != NULL)
 	{
-		new_content = f(lst->content);
-		new_node = ft_lstnew(new_content);
-		if (!new_node)
+		new_node = ft_lstnew(f(lst->content));
+		if (new_node == NULL)
 		{
-			del(new_content);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}

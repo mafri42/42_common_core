@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 13:54:18 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/05 16:17:23 by masacco          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:17:56 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_node;
 
-	if (new == NULL)
+	if (lst == NULL || new == NULL)
 		return ;
 	if (*lst == NULL)
 	{

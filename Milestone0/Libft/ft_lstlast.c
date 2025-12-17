@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 13:40:11 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/06 19:27:13 by masacco          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:13:51 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*last_node;
-
-	if (!lst)
+	if (lst == NULL)
 		return (NULL);
-	last_node = lst;
-	while (last_node->next != NULL)
-		last_node = last_node->next;
-	return (last_node);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 /* int main()
 {

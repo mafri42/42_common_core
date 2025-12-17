@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 16:11:33 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/05 18:29:52 by masacco          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:14:16 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst)
+	while (lst != NULL)
 	{
 		f(lst->content);
 		lst = lst->next;

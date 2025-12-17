@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 16:06:13 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/05 16:17:37 by masacco          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:09:19 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst == NULL)
+	if (lst == NULL || del == NULL)
 		return ;
 	del(lst->content);
 	free(lst);

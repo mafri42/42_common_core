@@ -6,7 +6,7 @@
 #    By: masacco <masacco@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 19:15:04 by masacco           #+#    #+#              #
-#    Updated: 2025/12/09 19:18:42 by masacco          ###   ########.fr        #
+#    Updated: 2025/12/16 15:06:16 by masacco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,7 @@ SRC = ft_isalpha.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
-		
-B_SRCS = ft_lstnew.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -62,21 +61,16 @@ B_SRCS = ft_lstnew.c \
 
 OBJ = $(SRC:.c=.o)
 
-B_OBJ = $(B_SRCS:.c=.o)
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(B_OBJ)
-	ar rc ${NAME} $(B_OBJ)
-
 %.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
-	rm -f $(OBJ) $(B_OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
