@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:03:52 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/08 17:43:51 by masacco          ###   ########.fr       */
+/*   Updated: 2026/01/21 15:40:32 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdio.h>
-# include <stdlib.h> //va_
+# include <stdlib.h>
 # include <stdarg.h>
 # include <stdint.h>
 
