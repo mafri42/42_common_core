@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:29:55 by masacco           #+#    #+#             */
-/*   Updated: 2025/12/08 17:25:40 by masacco          ###   ########.fr       */
+/*   Updated: 2026/02/02 16:04:34 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,3 @@ int	ft_putchar(char c)
 	write (0, &c, 1);
 	return (1);
 }
-
-/*int main()
-{
-    ft_putchar('c');
-}*/

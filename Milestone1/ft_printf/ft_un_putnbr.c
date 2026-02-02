@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_un_putnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 15:03:52 by masacco           #+#    #+#             */
-/*   Updated: 2026/02/02 16:05:09 by masacco          ###   ########.fr       */
+/*   Created: 2026/01/30 16:28:09 by masacco           #+#    #+#             */
+/*   Updated: 2026/01/30 17:05:45 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h> 
-# include <stdarg.h>
-# include <stdint.h>
+int	ft_un_putnbr(int nb)
+{
+	char	c;
+	int		i;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(unsigned char *str);
-int	ft_putnbr(int nb);
-int	ft_un_putnbr(int nb);
-int	ft_hex(unsigned int n, char *hex);
-int	ft_pointer(unsigned long n, int i);
-
-#endif
+	i = 0;
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		c = nb + '0';
+		i += write(0, &c, 1);
+	}
+	return (i);
+}
