@@ -32,7 +32,7 @@ For this project, I chose to install **DEBIAN**. Below is a comparison of the tw
 | **Stability** | High (Conservative update cycle) | High (Binary compatible with RHEL) |
 | **Learning Curve** | Moderate | Steeper (Stricter security defaults) |
 
-**My Choice:** I chose **[Debian/Rocky]** because of its stability and the extensive community support, which is ideal for learning the basics of system administration.
+**My Choice:** I chose **Debian** because of its stability and the extensive community support, which is ideal for learning the basics of system administration.
 
 ---
 
