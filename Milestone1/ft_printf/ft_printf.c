@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:06:25 by masacco           #+#    #+#             */
-/*   Updated: 2026/02/02 16:12:46 by masacco          ###   ########.fr       */
+/*   Updated: 2026/02/19 15:32:17 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			len += write(0, format, 1);
+			len += write(1, format, 1);
 		}
 		else
 		{
@@ -57,7 +57,7 @@ int	ft_printf(const char *format, ...)
 	return (len);
 }
 
-/* int main()
+/*int main()
 {
 	int i = 3;
 	int y = -3;
@@ -86,4 +86,4 @@ int	ft_printf(const char *format, ...)
 
 	printf("%d\n", ft_printf("%X\n", 0));
 	printf("%d\n\n", printf("%X\n", 0));
-} */
+}*/

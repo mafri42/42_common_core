@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:20:27 by masacco           #+#    #+#             */
-/*   Updated: 2026/01/30 16:31:14 by masacco          ###   ########.fr       */
+/*   Updated: 2026/02/19 15:35:31 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ int	ft_putnbr(int nb)
 	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		i += write(1, "-", 1);
 		nb = -nb;
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		i += ft_putnbr(nb / 10);
+		i += ft_putnbr(nb % 10);
 	}
 	else
 	{
 		c = nb + '0';
-		i += write(0, &c, 1);
+		i += write(1, &c, 1);
 	}
 	return (i);
 }
