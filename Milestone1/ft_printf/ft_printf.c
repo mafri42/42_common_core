@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:06:25 by masacco           #+#    #+#             */
-/*   Updated: 2026/02/19 15:32:17 by masacco          ###   ########.fr       */
+/*   Updated: 2026/02/22 14:54:46 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_printf(const char *format, ...)
 
 	len = 0;
 	va_start(args, format);
+	if (!format)
+		return (-1);
 	while (*format)
 	{
 		if (*format != '%')
@@ -63,6 +65,9 @@ int	ft_printf(const char *format, ...)
 	int y = -3;
 	int *j = &i;
 
+	printf("%d\n", ft_printf(NULL));
+	printf("%d\n", printf(NULL));
+
 	printf("%d\n", ft_printf("%c\n", 'a'));
 	printf("%d\n\n", printf("%c\n", 'a'));
 
@@ -81,9 +86,9 @@ int	ft_printf(const char *format, ...)
 	printf("%d\n", ft_printf("%u\n", i));
 	printf("%d\n\n", printf("%u\n", i));
 
- 	printf("%d\n", ft_printf("%x\n", 0));
-	printf("%d\n\n", printf("%x\n", 0));
+ 	printf("%d\n", ft_printf("%x\n", 1));
+	printf("%d\n\n", printf("%x\n", 1));
 
-	printf("%d\n", ft_printf("%X\n", 0));
-	printf("%d\n\n", printf("%X\n", 0));
+	printf("%d\n", ft_printf("%X\n", 1));
+	printf("%d\n\n", printf("%X\n", 1));
 }*/
