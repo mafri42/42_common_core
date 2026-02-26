@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 12:16:12 by masacco           #+#    #+#             */
-/*   Updated: 2026/02/09 14:47:34 by masacco          ###   ########.fr       */
+/*   Updated: 2026/02/26 17:30:49 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	del_str1(char **str, char *temp, int i)
 static void	del_str(char **str)
 {
 	char	*temp;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	if (ft_strchr(*str, '\n') == NULL)
 	{
@@ -109,8 +109,8 @@ char	*get_next_line(int fd)
 	free (str_buffer);
 	if (byte_read == -1)
 		return (NULL);
-	if (ft_strlen(str) == 0)
-		return (NULL);
+	if (!str || ft_strlen(str) == 0)
+		return (free(str), NULL);
 	str_result(&str, &str_res);
 	del_str(&str);
 	return (str_res);
@@ -121,13 +121,11 @@ char	*get_next_line(int fd)
 	int fd = open("text.txt", O_RDONLY);
 	char *line;
 
-	// Read until the function returns NULL (EOF)
-	while ((line = get_next_line(fd)) != NULL)
+	while ((line = get_next_line(0)) != NULL)
 	{
 		printf("%s", line);
-		free(line); // Free the line returned by GNL
+		free(line);
 	}
-	
 	close(fd);
 	return (0);
 }*/

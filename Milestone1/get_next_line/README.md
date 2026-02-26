@@ -1,4 +1,4 @@
-This project has been created as part of the 42 curriculum by masacco.
+*This project has been created as part of the 42 curriculum by masacco.*
 ***
 # 📚 GET_NEXT_LINE
 ***
@@ -24,7 +24,7 @@ The primary objective is to learn about static variables in C and to understand 
 ## 🛠️ Instructions
 To compile the project, you need to include the source files and define the BUFFER_SIZE. Use the following command:
 ```
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 <files>.c
 
 ```
 
