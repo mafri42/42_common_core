@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:16:14 by masacco           #+#    #+#             */
-/*   Updated: 2026/03/11 15:28:37 by masacco          ###   ########.fr       */
+/*   Updated: 2026/03/12 18:25:38 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	stack_nb_order(t_stack_node *stack)
 	return (1);
 }
 
-void	stack_a(t_stack_node *a, char **argv)
+void	stack_a(t_stack_node **a, char **argv)
 {
 	int		i;
 	long	n;
@@ -86,4 +86,21 @@ void	sort_three(t_stack_node **a)
 	second = (*a)->next->nb;
 	if (first > second)
 		sa(&a);
+}
+
+void	free_stack(t_stack_node **stack)
+{
+	t_stack_node	*tmp;
+	t_stack_node	*corr;
+	
+	if (!stack || !*stack)
+		return ;
+	corr = *stack;
+	while (corr)
+	{
+		tmp = corr->next;
+		free(corr);
+		corr = tmp;
+	}
+	*stack = NULL;
 }

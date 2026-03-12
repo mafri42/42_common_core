@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:13:46 by masacco           #+#    #+#             */
-/*   Updated: 2026/03/11 15:11:41 by masacco          ###   ########.fr       */
+/*   Updated: 2026/03/12 18:09:18 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ typedef struct s_stack_node //struttura
 }	t_stack_node;
 
 int		stack_nb_order(t_stack_node *stack);
-void	stack_a(t_stack_node *a, char **argv);
+void	stack_a(t_stack_node **a, char **argv);
+int		stack_len(t_stack_node *stack);
+void	sort_three(t_stack_node **a);
 
 long	ft_atoi_long(const char *nptr);
 
