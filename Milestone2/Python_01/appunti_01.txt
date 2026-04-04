@@ -152,3 +152,30 @@ if __name__ == "__main__":
 ✔ Usi show() per stampare
 ✔ Rispetti naming conventions
 ✔ Usi if __name__ == "__main__"
+
+EX2:
+🎯 Obiettivo
+Simulare la crescita di una pianta nel tempo (una settimana) usando una classe Plant 
+in stile OOP.
+
+Dentro una classe, il metodo che inizializza gli attributi si chiama:
+__init__
+E deve avere sempre:
+self
+come primo parametro.
+
+1. self
+Serve per riferirsi all’oggetto stesso.
+È quello che ti permette di fare:
+    self.name
+    self.height
+    self.age
+
+2. Il costruttore
+Deve:
+ricevere i parametri (name, height, age)
+salvarli dentro l’oggetto
+
+3. Il nome del metodo
+ft_plant_growth non deve stare dentro la classe come costruttore.
+Quel nome è il nome del file, non del metodo.
