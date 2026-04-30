@@ -46,7 +46,8 @@ The helper file is designed to be readable and educational. Feel
 free to look at the code to understand how it works, but focus on
 writing your own exercise solutions first.
 The helper file is for learning support only. Your submitted
-solutions should be your own work and demonstrate your understanding
+solutions should be your own work and demonstrate your understan
+ding
 of the concepts.
 
 
@@ -289,3 +290,12 @@ Ogni chiamata gestisce un solo giorno
 La ricorsione continua finché non supera il totale
 La funzione principale non fa altro che avviare la ricorsione con day = 1
 💡 In breve: la funzione “conta” i giorni chiamando sé stessa ogni volta fino all’ultimo giorno, poi stampa “Harvest time!” e termina.
+
+
+
+EX7:
+string methods in Python sono funzioni integrate (built-in) utilizzate
+per manipolare, analizzare o formattare testo memorizzato in variabili di tipo
+str. Poiché le stringhe sono immutabili, questi metodi non modificano 
+la stringa originale, ma ne restituiscono sempre una nuova copia modificata.
+

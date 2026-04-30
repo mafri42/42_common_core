@@ -179,3 +179,7 @@ salvarli dentro l’oggetto
 3. Il nome del metodo
 ft_plant_growth non deve stare dentro la classe come costruttore.
 Quel nome è il nome del file, non del metodo.
+
+
+EX3:
+
