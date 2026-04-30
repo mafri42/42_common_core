@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:59:33 by masacco           #+#    #+#             */
-/*   Updated: 2026/03/10 17:19:14 by masacco          ###   ########.fr       */
+/*   Updated: 2026/04/20 14:51:29 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rev_rotate(t_stack_node **stack)
 {
 	t_stack_node	*tail;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || !(*stack)->next)
 		return ;
 	tail = *stack;
 	while (tail->next != NULL)

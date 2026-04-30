@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:25:44 by masacco           #+#    #+#             */
-/*   Updated: 2026/03/10 17:18:12 by masacco          ###   ########.fr       */
+/*   Updated: 2026/04/20 14:49:32 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push(t_stack_node **dest, t_stack_node **src)
 {
 	t_stack_node	*node;
 
-	if (!src)
+	if (!src || !*src)
 		return ;
 	node = *src;
 	*src = (*src)->next;

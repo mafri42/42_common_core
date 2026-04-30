@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:11:49 by masacco           #+#    #+#             */
-/*   Updated: 2026/03/10 17:20:19 by masacco          ###   ########.fr       */
+/*   Updated: 2026/04/20 14:52:07 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	swap(t_stack_node **head)
 	t_stack_node	*first;
 	t_stack_node	*second;
 
-	if (!head)
+	if (!head || !*head || !(*head)->next)
 		return ;
 	first = *head;
 	second = first->next;

@@ -1,27 +1,30 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
+LIBFT = libft/libft.a
+INCLUDES = -I./includes -I./libft
 
 SRC = push_swap.c \
 		operations_push.c \
 		operations_rev_rotate.c \
-		operations_roate.c \
+		operations_rotate.c \
 		operations_swap.c \
 		ps_utils.c \
+		ps_utils1.c \
 		stack.c \
-
-OBJ = $(SRC:.c=.o)
+		index.c \
+		moves.c \
+		algorithm.c \
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(NAME) $(OBJ)
+$(NAME): 
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME) -g
 
 clean:
-	rm -rf $(OBJ)
+	rm -rf $(NAME)
 
 fclean: clean
-	rm -rf $(NAME)
 
 re: fclean all
 

@@ -1,1 +1,48 @@
+Spostare i numeri da A a B in modo intelligente, e poi rimetterli in ordine in A.
 TURK ALGORITHM:
+
+🔄 Fase 1: svuotare A (quasi tutto)
+Parti con tutti i numeri nello stack A.
+Spingi (pb) quasi tutti gli elementi in B.
+Lasci solo 3 numeri in A.
+👉 Perché 3?
+Perché 3 numeri si ordinano facilmente a mano.
+
+🔧 Fase 2: ordina i 3 in A
+Con poche operazioni (sa, ra, rra) sistemi i 3 numeri.
+
+🎯 Fase 3: reinserire da B a A (la parte “turca”)
+Qui sta il trucco 👇
+Per ogni numero in B:
+1. Trovi dove deve andare in A (la posizione giusta).
+2. Calcoli quante mosse servono per:
+    - portarlo in cima a B
+    - portare A nella posizione giusta
+3. Scegli il numero che costa meno mosse.
+👉 Questo è il cuore dell’algoritmo:
+sempre scegliere la mossa più economica.
+
+⚙️ Tipi di rotazioni usate
+Per ottimizzare le mosse:
+    ra / rb → ruoti in alto
+    rra / rrb → ruoti in basso
+    rr → ruoti entrambi insieme (risparmi mosse!)
+    rrr → ruoti entrambi al contrario
+💡 Se A e B devono ruotare nello stesso verso → fai rr
+💡 Se devono ruotare al contrario → fai rrr
+
+📦 Fase 4: sistema finale
+Quando tutto è tornato in A:
+Ruoti A finché il numero più piccolo è in cima.
+
+🧩 Riassunto ultra semplice
+Sposta quasi tutto da A → B
+Ordina 3 numeri in A
+Reinserisci da B scegliendo sempre il costo minimo
+Ruota A per finire
+
+💡 Perché funziona bene?
+Perché:
+evita mosse inutili
+usa rotazioni combinate (rr, rrr)
+prende sempre la decisione più conveniente

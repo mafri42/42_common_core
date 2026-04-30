@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:16:14 by masacco           #+#    #+#             */
-/*   Updated: 2026/03/12 18:25:38 by masacco          ###   ########.fr       */
+/*   Updated: 2026/04/29 16:27:41 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,18 @@ void	sort_three(t_stack_node **a)
 	int	third;
 
 	if (!a || !*a || !(*a)->next || !(*a)->next->next)
-		return (1);
+		return ;
 	first = (*a)->nb;
 	second = (*a)->next->nb;
 	third = (*a)->next->next->nb;
 	if (first > second && first > third)
-		ra(&a);
+		ra(a);
 	if (second > first && second > third)
-		rra(&a);
+		rra(a);
 	first = (*a)->nb;
 	second = (*a)->next->nb;
 	if (first > second)
-		sa(&a);
+		sa(a);
 }
 
 void	free_stack(t_stack_node **stack)
