@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:05:04 by masacco           #+#    #+#             */
-/*   Updated: 2026/04/30 18:41:18 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/04 17:23:40 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,10 @@ void	nb_node(t_stack_node **stack, long n)
 	}
 }
 
-void print_stack(t_stack_node *stack, char *str)
+void	print_stack(t_stack_node *stack, char *str)
 {
 	if (!stack)
-		return;
+		return ;
 	printf("stack %s: ", str);
 	while (stack)
 	{

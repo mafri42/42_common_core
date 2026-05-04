@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   ps_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 15:06:15 by masacco           #+#    #+#             */
-/*   Updated: 2026/05/04 15:14:29 by masacco          ###   ########.fr       */
+/*   Created: 2026/05/04 17:44:58 by masacco           #+#    #+#             */
+/*   Updated: 2026/05/04 17:45:13 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_index(t_stack_node **a, t_stack_node **b)
+int	ft_abs(int n)
 {
-	t_stack_node	*tmp_a;
-	t_stack_node	*tmp_b;
-	int				index;
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 
-	tmp_a = *a;
-	tmp_b = *b;
-	index = 0;
-	if (!a)
-		return ;
-	while (tmp_a)
+int	ft_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+int	calc_total_cost(int cost_a, int cost_b)
+{
+	if (cost_a >= 0 && cost_b >= 0)
+		return (ft_max(cost_a, cost_b));
+	else if (cost_a < 0 && cost_b < 0)
 	{
-		tmp_a->index = index;
-		tmp_a = tmp_a->next;
-		index++;
+		cost_a = -cost_a;
+		cost_b = -cost_b;
+		return (ft_max(cost_a, cost_b));
 	}
-	index = 0;
-	if (!b)
-		return ;
-	while (tmp_b)
-	{
-		tmp_b->index = index;
-		tmp_b = tmp_b->next;
-		index++;
-	}
+	else
+		return (ft_abs(cost_a) + ft_abs(cost_b));
 }

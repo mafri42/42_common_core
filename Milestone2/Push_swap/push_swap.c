@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:13:43 by masacco           #+#    #+#             */
-/*   Updated: 2026/04/30 18:55:18 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:24:18 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 		return (1);
 	stack_a (&a, argv + 1);
 	ft_index(&a, &b);
-	if (!stack_nb_order(a)) //se e' 1 quindi sono ordinati esce e non entra, altrimenti entra e fa gli altri controlli
+	if (!stack_nb_order(a))
 	{
 		if (stack_len(a) == 2)
 			sa (&a);

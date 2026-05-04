@@ -1,0 +1,8 @@
+
+-makefile compilare libft
+- togliere i print 
+- cosa anna 
+- norm
+- togliere gli appunti
+- readme
+- .h

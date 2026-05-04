@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:10:09 by masacco           #+#    #+#             */
-/*   Updated: 2026/04/30 18:59:07 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/04 17:32:57 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 // se ruota in su count++ se ruota in giu count--
 // se count e' negativo vuol dire che deve fare rrr finche arriva a 0 (count++)
 // se count e' positivo vuol dire che deve fare rr finche arriva a 0 (count--)
-int rotation_count(t_stack_node **stack, int num)
+int	rotation_count(t_stack_node **stack, int num)
 {
-	int count;
-	int nb_stack;
-	int nb_index;
-	t_stack_node *tmp;
-	
+	int				count;
+	int				nb_stack;
+	int				nb_index;
+	t_stack_node	*tmp;
+
 	count = 0;
 	tmp = *stack;
 	nb_stack = stack_len(*stack);
@@ -34,7 +34,8 @@ int rotation_count(t_stack_node **stack, int num)
 			count++;
 	else
 	{
-		while (nb_index < nb_stack){
+		while (nb_index < nb_stack)
+		{
 			count--;
 			nb_index++;
 		}
@@ -42,13 +43,13 @@ int rotation_count(t_stack_node **stack, int num)
 	return (count);
 }
 
-t_stack_node *push_count(t_stack_node **a, t_stack_node **b)
+t_stack_node	*push_count(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node *tmp_b;
-	t_stack_node *target;
-	t_stack_node *best_node;
-	int best_moves;
-	int current_moves;
+	t_stack_node	*tmp_b;
+	t_stack_node	*target;
+	t_stack_node	*best_node;
+	int				best_moves;
+	int				current_moves;
 
 	tmp_b = *b;
 	best_node = NULL;
@@ -68,10 +69,29 @@ t_stack_node *push_count(t_stack_node **a, t_stack_node **b)
 	return (best_node);
 }
 
-void push_nb(t_stack_node **a, t_stack_node **b, t_stack_node *best)
+void	func(t_stack_node **a, t_stack_node **b, int cost_a, int cost_b)
 {
-	int cost_a;
-	int cost_b;
+	while (cost_a < 0)
+	{
+		rra(a);
+		cost_a++;
+	}
+	while (cost_b > 0)
+	{
+		rb(b);
+		cost_b--;
+	}
+	while (cost_b < 0)
+	{
+		rrb(b);
+		cost_b++;
+	}
+}
+
+void	push_nb(t_stack_node **a, t_stack_node **b, t_stack_node *best)
+{
+	int	cost_a;
+	int	cost_b;
 
 	cost_a = best->target->push_cost;
 	cost_b = best->push_cost;
@@ -92,32 +112,18 @@ void push_nb(t_stack_node **a, t_stack_node **b, t_stack_node *best)
 		ra(a);
 		cost_a--;
 	}
-	while (cost_a < 0)
-	{
-		rra(a);
-		cost_a++;
-	}
-	while (cost_b > 0)
-	{
-		rb(b);
-		cost_b--;
-	}
-	while (cost_b < 0)
-	{
-		rrb(b);
-		cost_b++;
-	}
+	func(a, b, cost_a, cost_b);
 	pa(a, b);
 }
 
-void rotate_a(t_stack_node **a)
+void	rotate_a(t_stack_node **a)
 {
-	t_stack_node *tmp;
-	t_stack_node *min;
-	
+	t_stack_node	*tmp;
+	t_stack_node	*min;
+
 	tmp = *a;
 	min = tmp;
-	while (tmp) 
+	while (tmp)
 	{
 		if ((int)tmp->nb < min->nb)
 			min = tmp;

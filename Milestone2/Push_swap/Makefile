@@ -11,6 +11,7 @@ SRC = push_swap.c \
 		operations_swap.c \
 		ps_utils.c \
 		ps_utils1.c \
+		ps_utils2.c \
 		stack.c \
 		index.c \
 		moves.c \

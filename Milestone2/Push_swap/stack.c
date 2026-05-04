@@ -6,7 +6,7 @@
 /*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:16:14 by masacco           #+#    #+#             */
-/*   Updated: 2026/04/29 16:27:41 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/04 15:38:56 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	free_stack(t_stack_node **stack)
 {
 	t_stack_node	*tmp;
 	t_stack_node	*corr;
-	
+
 	if (!stack || !*stack)
 		return ;
 	corr = *stack;
