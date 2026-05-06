@@ -14,11 +14,11 @@ Questo progetto implementa una soluzione al problema di ordinamento utilizzando 
 L’obiettivo è ordinare una lista di numeri interi nel minor numero possibile di mosse, rispettando i vincoli imposti dal progetto.
 ---
 ## 🛠️ Instructions
-The project is managed by a `Makefile` which compiles:
-- the `push_swap` executable
-- the required libraries (`libft`, `ft_printf` included)
+Il progetto è gestito da un Makefile che compila:
+• l'eseguibile pushswap  
+• le librerie necessarie (libft, ft_printf)
 
-To compile the project, run:
+Per compilare il progetto, esegui:
 ```bash
 make
 

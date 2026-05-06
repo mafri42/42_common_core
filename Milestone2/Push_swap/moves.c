@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msacco <msacco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:10:09 by masacco           #+#    #+#             */
-/*   Updated: 2026/05/04 17:32:57 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/06 19:18:48 by msacco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void	rotate_a(t_stack_node **a)
 			min = tmp;
 		tmp = tmp->next;
 	}
-	while (!stack_nb_order(*a))
+	while (!stack_nb_order(*a, NULL))
 	{
 		if (min->index <= stack_len(*a))
 			ra(a);

@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msacco <msacco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:16:14 by masacco           #+#    #+#             */
-/*   Updated: 2026/05/04 15:38:56 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/06 19:58:34 by msacco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_nb_order(t_stack_node *stack)
+int	stack_nb_order(t_stack_node *stack, t_stack_node *b)
 {
 	if (!stack)
 		return (1);
-	while (stack->next != NULL) //finche' non sono finiti i numeri
+	ft_index(&stack, &b);
+	while (stack->next != NULL)
 	{
-		if (stack->nb > stack->next->nb) //se il numero che stiamo guardando e' piu' grande del numero dopo
-			return (0); //ritorno nel main, esco
-		stack = stack->next; //guardo il numero dopo e rifa' i controlli
+		if (stack->nb > stack->next->nb)
+			return (0);
+		stack = stack->next;
 	}
 	return (1);
 }
 
-void	stack_a(t_stack_node **a, char **argv)
+int	stack_a(t_stack_node **a, char **argv)
 {
 	int		i;
 	long	n;
@@ -36,20 +37,21 @@ void	stack_a(t_stack_node **a, char **argv)
 	{
 		if (error_fun(argv[i]))
 		{
-			free_stack(a);
+			free_stack(a, NULL);
 			write(2, "Error\n", 6);
-			exit(1);
+			return (1);
 		}
 		n = ft_atoi_long(argv[i]);
 		if (n > INT_MAX || n < INT_MIN || same_nb(*a, n))
 		{
-			free_stack(a);
+			free_stack(a, NULL);
 			write(2, "Error\n", 6);
-			exit(1);
+			return (1);
 		}
 		nb_node(a, n);
 		i++;
 	}
+	return (0);
 }
 
 int	stack_len(t_stack_node *stack)
@@ -88,19 +90,29 @@ void	sort_three(t_stack_node **a)
 		sa(a);
 }
 
-void	free_stack(t_stack_node **stack)
+void	free_stack(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*tmp;
 	t_stack_node	*corr;
 
-	if (!stack || !*stack)
+	if (!a || !*a)
 		return ;
-	corr = *stack;
+	corr = *a;
 	while (corr)
 	{
 		tmp = corr->next;
 		free(corr);
 		corr = tmp;
 	}
-	*stack = NULL;
+	*a = NULL;
+	if (!b || !*b)
+		return ;
+	corr = *b;
+	while (corr)
+	{
+		tmp = corr->next;
+		free(corr);
+		corr = tmp;
+	}
+	*b = NULL;
 }

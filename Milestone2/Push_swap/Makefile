@@ -13,20 +13,30 @@ SRC = push_swap.c \
 		ps_utils1.c \
 		ps_utils2.c \
 		stack.c \
-		index.c \
 		moves.c \
 		algorithm.c \
 
 all: $(NAME)
 
-$(NAME): 
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME) -g
+OBJS = $(SRC:.c=.o)
+
+%.o: %.c
+	@${CC} ${CFLAGS} ${INCLUDES} -c $< -o $@ 
+
+${NAME}: ${OBJS}
+	@make -C ./libft
+	@${CC} ${CFLAGS} ${OBJS} ${LIBFT} -o ${NAME} -g
+
+all: ${NAME}
 
 clean:
-	rm -rf $(NAME)
+	@make -C ./libft clean 
+	@${RM}	${OBJS}	
 
 fclean: clean
+	@make -C ./libft fclean
+	@${RM}	${NAME}	
 
-re: fclean all
+re: fclean	all
 
-.PHONY = all clean fclean re
+.PHONY:	all	clean	fclean	re

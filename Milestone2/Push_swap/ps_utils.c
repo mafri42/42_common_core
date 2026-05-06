@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msacco <msacco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:05:04 by masacco           #+#    #+#             */
-/*   Updated: 2026/05/04 17:23:40 by masacco          ###   ########.fr       */
+/*   Updated: 2026/05/06 18:47:14 by msacco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,11 @@ void	print_stack(t_stack_node *stack, char *str)
 {
 	if (!stack)
 		return ;
-	printf("stack %s: ", str);
+	ft_printf("stack %s: ", str);
 	while (stack)
 	{
-		printf("%d, ", (int)stack->nb);
+		ft_printf("%d, ", (int)stack->nb);
 		stack = stack->next;
 	}
-	printf("\n");
+	ft_printf("\n");
 }
