@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msacco <msacco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:10:09 by masacco           #+#    #+#             */
-/*   Updated: 2026/05/06 19:18:48 by msacco           ###   ########.fr       */
+/*   Updated: 2026/05/08 12:54:47 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// conta le rotazioni da fare per arrivare in cima
-// se ruota in su count++ se ruota in giu count--
-// se count e' negativo vuol dire che deve fare rrr finche arriva a 0 (count++)
-// se count e' positivo vuol dire che deve fare rr finche arriva a 0 (count--)
 int	rotation_count(t_stack_node **stack, int num)
 {
 	int				count;

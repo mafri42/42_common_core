@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msacco <msacco@student.42.fr>              +#+  +:+       +#+        */
+/*   By: masacco <masacco@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 14:13:46 by masacco           #+#    #+#             */
-/*   Updated: 2026/05/06 19:57:56 by msacco           ###   ########.fr       */
+/*   Updated: 2026/05/08 12:59:19 by masacco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ void			ft_index(t_stack_node **a, t_stack_node **b);
 // moves.c
 int				rotation_count(t_stack_node **stack, int num);
 t_stack_node	*push_count(t_stack_node **a, t_stack_node **b);
-void			func(t_stack_node **a, t_stack_node **b, int cost_a, int cost_b);
+void			func(t_stack_node **a, t_stack_node **b,
+					int cost_a, int cost_b);
 void			push_nb(t_stack_node **a, t_stack_node **b, t_stack_node *best);
 void			rotate_a(t_stack_node **a);
 
@@ -75,7 +76,8 @@ void			nb_node(t_stack_node **stack, long n);
 void			print_stack(t_stack_node *stack, char *str);
 
 //ps_ultis1.c
-void			ft_target(t_stack_node *a, t_stack_node *tmp, t_stack_node *target);
+void			ft_target(t_stack_node *a, t_stack_node *tmp,
+					t_stack_node *target);
 void			fun(t_stack_node *tmp, t_stack_node **target);
 t_stack_node	*find_target(t_stack_node *a, long nb);
 
