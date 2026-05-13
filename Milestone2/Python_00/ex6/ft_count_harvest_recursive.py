@@ -7,5 +7,5 @@ def count_days(day, harvest_days):
     if day > harvest_days:
         print("Harvest time!")
         return
-    print("Day ", day)
+    print(f"Day {day}")
     count_days(day + 1, harvest_days)
