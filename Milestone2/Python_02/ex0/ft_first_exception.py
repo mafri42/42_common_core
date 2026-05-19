@@ -3,8 +3,9 @@ def input_temperature(temp_str: str):
     temp_int = int(temp_str)
     return temp_int
 
+
 def test_temperature():
-    print ("=== Garden Temperature ===")
+    print("=== Garden Temperature ===")
     print()
     try:
         temp = "25"

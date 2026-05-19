@@ -2,11 +2,14 @@ class GardenError(Exception):
     def __init__(self, message: str = "Unknown plant error") -> None:
         super().__init__(message)
 
+
 class PlantError(GardenError):
     pass
 
+
 class WaterError(GardenError):
     pass
+
 
 def error_types():
     try:
@@ -33,6 +36,7 @@ def error_types():
     except GardenError as error:
         print(f"Caught {error.__class__.__name__}: {error}")
     print()
+
 
 if __name__ == "__main__":
     print("=== Custom Garden Errors Demo ===")

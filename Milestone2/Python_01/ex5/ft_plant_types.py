@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 class Plant:
-    def __init__(self, name: str, height: float, days: int, growth: float) -> None:
+    def __init__(
+        self,
+        name: str,
+        height: float,
+        days: int,
+        growth: float
+    ) -> None:
         self.name = name
         self.height = height
         self.days = days
@@ -15,8 +21,16 @@ class Plant:
     def age(self, i: int) -> None:
         self.days += i
 
-class Flower (Plant):
-    def __init__(self, name: str, height: float, days: int, color: str, growth: float) -> None:
+
+class Flower(Plant):
+    def __init__(
+        self,
+        name: str,
+        height: float,
+        days: int,
+        color: str,
+        growth: float,
+    ) -> None:
         super().__init__(name, height, days, growth)
         self.color = color
 
@@ -31,21 +45,41 @@ class Flower (Plant):
         self.show()
         print(f"{self.name} is blooming beautifully!")
 
-class Tree (Plant):
-    def __init__(self, name: str, height: float, days: int, growth: float, trunk_diameter: float) -> None:
+
+class Tree(Plant):
+    def __init__(
+        self,
+        name: str,
+        height: float,
+        days: int,
+        growth: float,
+        trunk_diameter: float,
+    ) -> None:
         super().__init__(name, height, days, growth)
         self.trunk_diameter = trunk_diameter
-    
+
     def show(self) -> None:
         super().show()
         print(f" Trunk diameter: {self.trunk_diameter}cm")
 
     def produce_shade(self) -> None:
         print(f"[asking the {self.name.lower()} to produce shade]")
-        print(f"Tree {self.name} now produces a shade of {self.height}cm long and {self.trunk_diameter}cm wide.")
+        print(
+            f"Tree {self.name} now produces a shade of "
+            f"{self.height}cm long and "
+            f"{self.trunk_diameter}cm wide."
+        )
+
 
 class Vegetable(Plant):
-    def __init__(self, name: str, height: float, days: int, harvest_season: str, growth: float) -> None:
+    def __init__(
+        self,
+        name: str,
+        height: float,
+        days: int,
+        harvest_season: str,
+        growth: float,
+    ) -> None:
         super().__init__(name, height, days, growth)
         self.harvest_season = harvest_season
         self.nutritional_value = 0
@@ -60,6 +94,7 @@ class Vegetable(Plant):
         self.age(i)
         self.grow()
         self.nutritional_value += i
+
 
 if __name__ == "__main__":
     print("=== Garden Plant Types ===")

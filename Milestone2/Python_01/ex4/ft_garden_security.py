@@ -1,6 +1,6 @@
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
-        self._name = name 
+        self._name = name
         self._height = 0
         self._age = 0
 
@@ -15,26 +15,27 @@ class Plant:
 
     def age(self):
         self._age += 1
-    
+
     def set_height(self, new):
         if new < 0:
             print(f"{self._name}: Error, height can't be negative")
             print("Height update rejected")
         else:
             self._height = new
-        
+
     def set_age(self, new):
         if new < 0:
             print(f"{self._name}: Error, age can't be negative")
-            print ("Age update rejected")
+            print("Age update rejected")
         else:
             self._age = new
 
     def get_height(self):
         return self._height
-    
+
     def get_age(self):
         return self._age
+
 
 if __name__ == "__main__":
     print("=== Garden Security System ===")

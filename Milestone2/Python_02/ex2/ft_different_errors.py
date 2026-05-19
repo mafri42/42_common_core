@@ -12,12 +12,16 @@ def garden_operations(operation_number: int) -> None:
         case _:
             return
 
+
 def test_error_types():
     print("=== Garden Error Types Demo ===")
     for i in range(5):
         try:
             garden_operations(i)
-        except (ValueError, ZeroDivisionError, FileNotFoundError, TypeError) as error:
+        except (
+            ValueError, ZeroDivisionError,
+            FileNotFoundError, TypeError,
+        ) as error:
             print(f"Cought {error.__class__.__name__}: {error}")
 
 
