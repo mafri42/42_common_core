@@ -1,3 +1,6 @@
+FLAKE8
+
+
 MYPY:
 Mypy è un verificatore statico dei tipi (“static type checker”) per il linguaggio Python.
 Fornisce tipizzazione opzionale e graduale, permettendo di aggiungere annotazioni di tipo (PEP 484) al codice Python 
