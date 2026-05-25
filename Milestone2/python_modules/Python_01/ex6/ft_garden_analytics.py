@@ -1,10 +1,4 @@
 #!/usr/bin/python3
-def display_statistic(plant: "Plant"):
-    print(f"[statistics for {plant.name}]")
-    print(f"Stats: {plant.grow_count} grow, "
-          f"{plant.age_count} age, {plant.show_count} show")
-
-
 class Plant:
     grow_count: int = 0
     age_count: int = 0
@@ -41,7 +35,10 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name: str, h: float, days: int, gw: float, color: str) -> None:
+    def __init__(
+        self, name: str, h: float,
+        days: int, gw: float, color: str
+    ) -> None:
         super().__init__(name, h, days, gw)
         self.color = color
 
@@ -61,11 +58,14 @@ class Flower(Plant):
 
 
 class Seed(Flower):
-    def __init__(self, name: str, h: float, days: int, gw: float, color: str) -> None:
+    def __init__(
+        self, name: str, h: float,
+        days: int, gw: float, color: str
+    ) -> None:
         super().__init__(name, h, days, gw, color)
         self.amount = 0
 
-    def age_and_bloom(self):
+    def age_and_bloom(self) -> None:
         self.show()
         print(f" {self.name} has not bloomed yet")
         print(f" Seeds: {self.amount}")
@@ -99,6 +99,12 @@ class Tree(Plant):
         self.shades += 1
         display_statistic(self)
         print(f" {self.shades} shade")
+
+
+def display_statistic(plant: Plant) -> None:
+    print(f"[statistics for {plant.name}]")
+    print(f"Stats: {plant.grow_count} grow, "
+          f"{plant.age_count} age, {plant.show_count} show")
 
 
 if __name__ == "__main__":

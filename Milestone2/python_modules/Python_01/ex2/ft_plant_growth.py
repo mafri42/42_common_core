@@ -5,14 +5,14 @@ class Plant:
         self.height = height
         self.days = age
 
-    def grow(self):
+    def grow(self) -> None:
         self.height += 0.8
 
-    def age(self):
+    def age(self) -> None:
         self.days += 1
 
 
-def ft_plant_growth():
+def ft_plant_growth() -> None:
     print("=== Garden Plant Growth ===")
 
     rose = Plant("Rose", 25.0, 30)
