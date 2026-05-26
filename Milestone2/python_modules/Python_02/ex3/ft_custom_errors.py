@@ -11,7 +11,7 @@ class WaterError(GardenError):
     pass
 
 
-def error_types():
+def error_types() -> None:
     try:
         print("Testing PlantError...")
         raise PlantError("The tomato plant is wilting!")

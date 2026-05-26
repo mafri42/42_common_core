@@ -5,7 +5,7 @@ print("=== Inventory System Analysis ===")
 args = sys.argv[1:]
 inventory = {}
 
-for param in args: #per ogni elemento dell’input, analizzalo uno per uno
+for param in args:
     if ":" not in param:
         print(f"Error - invalid parameter '{param}'")
         continue
@@ -15,7 +15,7 @@ for param in args: #per ogni elemento dell’input, analizzalo uno per uno
         continue
     try:
         quantity = int(quantity)
-    except:
+    except ValueError:
         print(
             f"Quantity error for '{item}': "
             f"invalid literal for int() with base 10: '{quantity}'"

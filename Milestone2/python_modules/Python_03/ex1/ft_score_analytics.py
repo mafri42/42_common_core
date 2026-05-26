@@ -2,12 +2,12 @@ import sys
 
 print("=== Player Score Analytics ===")
 
-args = sys.argv[1:] #prendi la lista da indice 1 fino alla fine
+args = sys.argv[1:]
 scores = []
 
-for x in args: #prendere ogni elemento di una lista
+for x in args:
     try:
-        scores.append(int(x)) #trasformare x in numero, aggiungerlo alla lista scores
+        scores.append(int(x))
     except ValueError:
         print(f"Invalid parameter: '{x}'")
 

@@ -1,8 +1,9 @@
 import random
 
-print ("=== Game Data Alchemist ===")
+print("=== Game Data Alchemist ===")
 
-players = ['Alice', 'bob', 'Charlie', 'dylan', 'Emma', 'Gregory', 'john', 'kevin', 'Liam']
+players = ['Alice', 'bob', 'Charlie', 'dylan',
+           'Emma', 'Gregory', 'john', 'kevin', 'Liam']
 
 print("Initial list of players:", players)
 
@@ -18,5 +19,6 @@ print("Score dict:", scores)
 average = sum(scores.values()) / len(scores)
 print("Score average is", round(average, 2))
 
-high_scores = {name: score for name, score in scores.items() if score > average}
+high_scores = {name: score for name, score in scores.items()
+               if score > average}
 print("High scores:", high_scores)

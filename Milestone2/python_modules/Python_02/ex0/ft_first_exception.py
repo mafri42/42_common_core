@@ -1,10 +1,10 @@
-def input_temperature(temp_str: str):
+def input_temperature(temp_str: str) -> int:
     print(f"Input data is '{temp_str}'")
     temp_int = int(temp_str)
     return temp_int
 
 
-def test_temperature():
+def test_temperature() -> None:
     print("=== Garden Temperature ===")
     print()
     try:
