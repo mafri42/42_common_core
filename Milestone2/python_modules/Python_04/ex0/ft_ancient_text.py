@@ -3,24 +3,20 @@ import sys
 
 def ancient_text() -> None:
     if len(sys.argv) != 2:
-        print("Usage: ft_ancient_text.py <file>")
+        print("Usage: ft_ancient_text.py <file>\n")
     else:
         print("=== Cyber Archives Recovery ===")
         print(f"Accessing file '{sys.argv[1]}'")
-    try:
-        # codice che può fallire
-        file = open(sys.argv[1])
-        contenuto = file.read()
-        print("---")
-        print(f"\n{contenuto}")
-        print("\n---")
-        file.close()
-        print(f"File '{sys.argv[1]}' closed.")
-    except FileNotFoundError as e:
-        # cosa fare se fallisce
-        print(f"Error opening file '{sys.argv[1]}': {e}")
-    except PermissionError as e:
-        print(f"Error opening file '{sys.argv[1]}': {e}")
+        try:
+            file = open(sys.argv[1])
+            contenuto = file.read()
+            print("---")
+            print(f"\n{contenuto}")
+            print("\n---")
+            file.close()
+            print(f"File '{sys.argv[1]}' closed.")
+        except (FileNotFoundError, PermissionError) as e:
+            print(f"Error opening file '{sys.argv[1]}': {e}\n")
 
 
 if __name__ == "__main__":
