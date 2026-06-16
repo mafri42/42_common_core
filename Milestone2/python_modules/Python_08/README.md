@@ -567,3 +567,65 @@ rm -rf matrix_env
 ---
 ```
 ````
+
+
+
+## EX2, oracle.py
+import os
+from dotenv import load_dotenv
+
+✔️ Questo serve per:
+
+os → leggere variabili d’ambiente
+load_dotenv → leggere il file .env
+
+load_dotenv()
+🔍 Cosa fa?
+legge automaticamente il file .env
+carica le variabili nel sistema
+così os.getenv() può leggerleload_dotenv()
+🔍 Cosa fa?
+legge automaticamente il file .env
+carica le variabili nel sistema
+così os.getenv() può leggerle
+
+creiamo una funzione che prende tutte le variabili (def load_config)
+os.getenv("VAR") → legge variabile
+secondo valore → default se manca
+es: "development" o "DEBUG"
+
+def display: Cosa fa questa funzione?
+stampa lo stato del sistema
+cambia output in base a cosa è presente o mancante
+simula un “sistema Oracle”
+
+
+def validate_config: controlla solo i campi “obbligatori”
+crea lista di mancanti
+NON blocca il programma (solo warning, come richiesto dal subject)
+
+
+
+📄 1. .env.example
+Questo file deve mostrare solo esempi, mai segreti reali:
+
+MATRIX_MODE=development
+DATABASE_URL=sqlite:///local.db
+API_KEY=your_api_key_here
+LOG_LEVEL=DEBUG
+ZION_ENDPOINT=http://zion.local
+
+✔️ Serve per:
+far capire come configurare il progetto
+NON contiene segreti veri
+è il template per .env
+
+2. .gitignore
+.env
+venv/
+__pycache__/
+*.pyc
+🧠 Perché:
+.env → contiene segreti (NON deve finire su Git)
+venv/ → ambiente locale inutile su repo
+cache Python → sporcizia inutile
