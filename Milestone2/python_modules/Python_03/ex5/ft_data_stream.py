@@ -1,9 +1,10 @@
 import random
+from typing import Generator, Tuple
 
 print("=== Game Data Stream Processor ===")
 
 
-def gen_event():
+def gen_event() -> Generator[Tuple[str, str], None, None]:
     players = ["alice", "bob", "charlie", "dylan"]
     actions = [
         "move",
@@ -34,7 +35,9 @@ for i in range(10):
 print("Built list of 10 events:", event_list)
 
 
-def consume_event(event_list):
+def consume_event(
+        event_list: list[Tuple[str, str]]
+) -> Generator[Tuple[str, str], None, None]:
     while event_list:
         event = random.choice(event_list)
         event_list.remove(event)

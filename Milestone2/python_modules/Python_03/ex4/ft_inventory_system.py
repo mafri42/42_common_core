@@ -14,14 +14,14 @@ for param in args:
         print(f"Redundant item '{item}' - discarding")
         continue
     try:
-        quantity = int(quantity)
+        qty = int(quantity)
     except ValueError:
         print(
             f"Quantity error for '{item}': "
-            f"invalid literal for int() with base 10: '{quantity}'"
+            f"invalid literal for int() with base 10: '{qty}'"
         )
         continue
-    inventory[item] = quantity
+    inventory[item] = qty
 print("Got inventory:", inventory)
 items = list(inventory.keys())
 print("Item list:", items)

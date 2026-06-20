@@ -20,7 +20,7 @@ achievements = [
 ]
 
 
-def gen_player_achievements():
+def gen_player_achievements() -> set[str]:
     number = random.randint(5, 9)
     player_set = set()
     for _ in range(number):
