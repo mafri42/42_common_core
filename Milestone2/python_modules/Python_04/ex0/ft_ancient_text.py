@@ -3,7 +3,7 @@ import sys
 
 def ancient_text() -> None:
     if len(sys.argv) != 2:
-        print("Usage: ft_ancient_text.py <file>\n")
+        print(f"Usage: {sys.argv[0]} <file>\n")
     else:
         print("=== Cyber Archives Recovery ===")
         print(f"Accessing file '{sys.argv[1]}'")

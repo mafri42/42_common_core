@@ -1,9 +1,9 @@
 import sys
 
 
-def stream_managemen() -> None:
+def stream_management() -> None:
     if len(sys.argv) != 2:
-        print("Usage: ft_ancient_text.py <file>")
+        print(f"Usage: {sys.argv[0]} <file>")
     else:
         print("=== Cyber Archives Recovery & Preservation ===")
         print(f"Accessing file '{sys.argv[1]}'")
@@ -20,30 +20,32 @@ def stream_managemen() -> None:
                 f"[STDERR] Error opening file '{sys.argv[1]}': {e}",
                 file=sys.stderr
             )
-        print("\nTransform data:\n---")
-        data = open(sys.argv[1], "r")
-        cont = data.read()
-        cont = cont.replace("\n", "#\n")
-        print(f"\n{cont}")
-        print("---")
-        print("Enter new file name (or empty): ", end="", flush=True)
-        new = sys.stdin.readline().strip()
-        if new == "":
-            print("Not saving data.")
         else:
-            try:
-                print(f"Saving data to '{new}'")
-                new_file = open(new, "w")
-                new_file.write(cont)
-                new_file.close()
-                print(f"Data saved in file '{new}'")
-            except (FileNotFoundError, PermissionError) as e:
-                print(
-                        f"[STDERR] Error opening file '{new}': {e}",
-                        file=sys.stderr
-                    )
-                print("Data not saved")
+            print("\nTransform data:\n---")
+            data = open(sys.argv[1], "r")
+            cont = data.read()
+            cont = cont.replace("\n", "#\n")
+            data.close()
+            print(f"\n{cont}")
+            print("---")
+            print("Enter new file name (or empty): ", end="", flush=True)
+            new = sys.stdin.readline().strip()
+            if new == "":
+                print("Not saving data.")
+            else:
+                try:
+                    print(f"Saving data to '{new}'")
+                    new_file = open(new, "w")
+                    new_file.write(cont)
+                    new_file.close()
+                    print(f"Data saved in file '{new}'")
+                except (FileNotFoundError, PermissionError) as e:
+                    print(
+                            f"[STDERR] Error opening file '{new}': {e}",
+                            file=sys.stderr
+                        )
+                    print("Data not saved.")
 
 
 if __name__ == "__main__":
-    stream_managemen()
+    stream_management()
