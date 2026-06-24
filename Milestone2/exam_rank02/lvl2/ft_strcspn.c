@@ -37,14 +37,18 @@ size_t	ft_strcspn(const char *s, const char *reject)
 The  strcspn()  function  calculates  the  length of the initial segment of s
 which consists entirely of bytes not in reject.
 This function returns the number of characters in the first string before the 1st occurrence
-of character present in second string. */
+of character present in second string. 
+
+La funzione strcspn serve a rispondere a questa domanda:
+"Quanti caratteri posso leggere all'inizio della prima stringa prima di sbattere contro uno 
+qualsiasi dei caratteri contenuti nella seconda stringa?"*/
 
 #include <string.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	char	str1[] = "Hello!";
+	char	str1[] = "Heooollo!";
 	char	str2[] = "!l";
 
 	printf("Original strcspn: %ld\n", strcspn(str1, str2));
