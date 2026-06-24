@@ -34,6 +34,11 @@ char	*ft_strpbrk(const char *s1, const char *s2)
     }
     return (0);
 }
+/*La funzione strpbrk è la "sorella" di strcspn (quella di prima), ma invece di dirti quanti 
+caratteri ha letto, fa una cosa diversa: ti restituisce il puntatore al primo carattere vietato che incontra.
+In parole ancora più semplici: ti restituisce la stringa tagliata a partire dal punto in cui ha trovato la prima corrispondenza.
+(tipo dalla o in poi)*/
+
 
 int	main(void)
 {

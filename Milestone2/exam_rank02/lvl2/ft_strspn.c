@@ -12,22 +12,25 @@ size_t	ft_strspn(const char *s, const char *accept);*/
 
 #include <stddef.h>
 
-size_t	ft_strspn(const char *s, const char *accept)
+size_t  ft_strspn(const char *s, const char *accept)
 {
     size_t i;
     size_t j;
 
     i = 0;
-    j = 0;
-    while (s[i] && accept[j])
+    while (s[i])
     {
-        if (s[i] == accept[j])
-        {
-            j = 0;
-            i++;
-        }
-        else
+        j = 0;
+        // Cerco se s[i] è dentro la stringa accept
+        while (accept[j] && accept[j] != s[i])
             j++;
+        
+        // Se accept[j] è '\0', significa che ho scorso tutta la stringa 
+        // accept e non ho mai trovato s[i]. Quindi s[i] non è permesso!
+        if (accept[j] == '\0')
+            return (i); // Mi fermo e restituisco quanti ne ho trovati finora
+        
+        i++;
     }
     return (i);
 }
@@ -38,7 +41,7 @@ size_t	ft_strspn(const char *s, const char *accept)
 int	main(void)
 {
 	char	*s = "aaabc";
-	char	*accept = "a";
+	char	*accept = "b";
 
 	printf("ORIGINAL: %ld\n", strspn(s, accept));
 	printf("MY FUNCTION: %ld\n", ft_strspn(s, accept));
