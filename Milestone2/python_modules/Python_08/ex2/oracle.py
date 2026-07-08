@@ -5,18 +5,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def load_config():
+def load_config() -> dict[str, str | None]:
     config = {
-        "MATRIX_MODE": os.getenv("MATRIX_MODE"),
-        "DATABASE_URL": os.getenv("DATABASE_URL"),
-        "API_KEY": os.getenv("API_KEY"),
-        "LOG_LEVEL": os.getenv("LOG_LEVEL", "DEBUG"),
-        "ZION_ENDPOINT": os.getenv("ZION_ENDPOINT"),
+        "MATRIX_MODE": os.getenv("MATRIX_MODE", None) ,
+        "DATABASE_URL": os.getenv("DATABASE_URL", None),
+        "API_KEY": os.getenv("API_KEY", None),
+        "LOG_LEVEL": os.getenv("LOG_LEVEL", None),
+        "ZION_ENDPOINT": os.getenv("ZION_ENDPOINT", None),
     }
     return config
 
 
-def display(config, missing) -> bool:
+def display(config: dict[str, str | None], missing: list[str]) -> bool:
     print("\nORACLE STATUS: Reading the Matrix...\n")
     print("Configuration loaded:")
 
@@ -24,7 +24,6 @@ def display(config, missing) -> bool:
         print(f"Mode: {config['MATRIX_MODE']}")
     else:
         print("Mode: Missing mode")
-        
 
     if config["DATABASE_URL"]:
         print("Database: Connected to configured instance")
@@ -51,7 +50,7 @@ def display(config, missing) -> bool:
     return True
 
 
-def validate_config(config):
+def validate_config(config: dict[str, str | None]) -> list[str]:
     required = ["DATABASE_URL", "API_KEY", "ZION_ENDPOINT"]
     missing = []
 
@@ -61,7 +60,7 @@ def validate_config(config):
     return (missing)
 
 
-def security_check():
+def security_check() -> None:
     print("\nEnvironment security check:")
 
     print("[OK] No hardcoded secrets detected")
@@ -69,7 +68,7 @@ def security_check():
     print("[OK] Production overrides available")
 
 
-def main():
+def main() -> None:
 
     config = load_config()
     missing = validate_config(config)

@@ -4,15 +4,13 @@ try:
     import requests
     import matplotlib.pyplot as plt
     import matplotlib
-    import sys
-    import importlib
 except ImportError as e:
     print("Missing dependency:", e.name)
     print("Install with: pip install -r requirements.txt")
     exit()
 
 
-def main():
+def main() -> None:
     print("\nLOADING STATUS: Loading programs...")
 
     print("\nChecking dependencies:")
