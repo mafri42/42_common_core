@@ -7,20 +7,24 @@ load_dotenv()
 
 def load_config():
     config = {
-        "MATRIX_MODE": os.getenv("MATRIX_MODE", "development"),
+        "MATRIX_MODE": os.getenv("MATRIX_MODE"),
         "DATABASE_URL": os.getenv("DATABASE_URL"),
         "API_KEY": os.getenv("API_KEY"),
         "LOG_LEVEL": os.getenv("LOG_LEVEL", "DEBUG"),
         "ZION_ENDPOINT": os.getenv("ZION_ENDPOINT"),
     }
-    return (config)
+    return config
 
 
-def display(config):
+def display(config, missing) -> bool:
     print("\nORACLE STATUS: Reading the Matrix...\n")
     print("Configuration loaded:")
 
-    print(f"Mode: {config['MATRIX_MODE']}")
+    if config["MATRIX_MODE"]:
+        print(f"Mode: {config['MATRIX_MODE']}")
+    else:
+        print("Mode: Missing mode")
+        
 
     if config["DATABASE_URL"]:
         print("Database: Connected to configured instance")
@@ -38,6 +42,13 @@ def display(config):
         print("Zion Network: Online")
     else:
         print("Zion Network: Offline / not configured")
+
+    if missing:
+        print("\nWARNING: Missing configuration:")
+        for m in missing:
+            print(f" - {m}")
+        return False
+    return True
 
 
 def validate_config(config):
@@ -59,39 +70,12 @@ def security_check():
 
 
 def main():
+
     config = load_config()
-
-    print("\nAccessing the Mainframe")
-    print("ORACLE STATUS: Reading the Matrix...")
-
     missing = validate_config(config)
 
-    print("\nConfiguration loaded:")
-    print(f"Mode: {config['MATRIX_MODE']}")
-
-    if config["DATABASE_URL"]:
-        print("Database: Connected to local instance")
-    else:
-        print("Database: Missing configuration")
-
-    if config["API_KEY"]:
-        print("API Access: Authenticated")
-    else:
-        print("API Access: Missing API key")
-
-    print(f"Log Level: {config['LOG_LEVEL']}")
-
-    if config["ZION_ENDPOINT"]:
-        print("Zion Network: Online")
-    else:
-        print("Zion Network: Offline / not configured")
-
-    if missing:
-        print("\nWARNING: Missing configuration:")
-        for m in missing:
-            print(f" - {m}")
-
-    security_check()
+    if display(config, missing):
+        security_check()
 
     print("\nThe Oracle sees all configurations")
 
