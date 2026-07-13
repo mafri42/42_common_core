@@ -1,5 +1,4 @@
 from datetime import datetime
-
 from pydantic import BaseModel, Field, ValidationError
 
 
@@ -44,9 +43,9 @@ def main() -> None:
             last_maintenance=datetime(2026, 6, 12, 14, 30, 0)
         )
     except ValidationError as e:
+        print()
         print("=" * 40)
-        print("Expected validation error:")
-        print(e)
+        print(f"Expected validation error:\n {e}")
 
 
 if __name__ == "__main__":
