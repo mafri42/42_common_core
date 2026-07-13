@@ -56,3 +56,9 @@ int	main(void)
 
 	return (0);
 }
+
+/* 
+$ lvl2$ ./a.out 
+Original strcspn: 5
+My strcspn: 5
+*/

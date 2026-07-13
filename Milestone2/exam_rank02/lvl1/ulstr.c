@@ -32,7 +32,7 @@ void ft_putchar(char c)
     write (1, &c, 1);
 }
 
-void rot(char *str)
+void ulstr(char *str)
 {
     int i;
 
@@ -47,7 +47,7 @@ void rot(char *str)
 int main(int argc, char **argv)
 {
     if (argc == 2)
-        rot(argv[1]);
+        ulstr(argv[1]);
     write (1, "\n", 1);
     return (0);
 }
