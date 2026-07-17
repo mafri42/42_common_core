@@ -19,32 +19,43 @@ Examples:
 - With (0, -3) you will return an array containing 0, -1, -2 and -3.*/
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 int     *ft_range(int start, int end)
 {
-    int *res;
-    int i;
-    int len;
+    int len = 0;
+    int i = 0;
+    int *range;
 
-    i = 0;
-    len = abs(start - end + 1);
-    res = (int *)malloc(len);
-    while (i < len)
+    if (start < end)
     {
-        if (start <= end)
-            res[i++] = start++;
-        else if (start >= end)
-            res[i++] = start--;
+        len = end - start + 1;
+        range = malloc(len);
+        while(start <= end)
+        {
+            range[i] = start;
+            i++;
+            start++;
+        }        
     }
-    return(res);
+    else
+    {
+        len = start - end + 1;
+        range = malloc(len);
+        while(start >= end)
+        {
+            range[i] = start;
+            i++;
+            start--;
+        }        
+    }
+    return(range);
 }
 
-
-int	main(int argc, char **argv)
+int main(int ac, char **av)
 {
-	if (argc == 3)
-		printf("%ls", ft_range(atoi(argv[1]), atoi(argv[2])));
-	printf("\n");
-	return(0);
+    int *range = ft_range(0, -3);
+
+    printf("%d, %d, %d, %d\n", range[0], range[1], range[2], range[3]);
 }

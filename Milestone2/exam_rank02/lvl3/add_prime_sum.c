@@ -88,7 +88,7 @@ int prime(int nb)
             return (0);
         i++;
     }
-    return (i);
+    return (1);
 }
 
 int main(int argc, char **argv)

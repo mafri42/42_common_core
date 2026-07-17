@@ -92,7 +92,7 @@ void  fill_helper(char **tab, t_point size, int y, int x, char target)
 {
     if ((y < 0) || (y >= size.y))
         return ;
-    else if ((x < 0) || (y >= size.x))
+    else if ((x < 0) || (x >= size.x))
         return ;
     else if (tab[y][x] != target)
         return ;
@@ -112,7 +112,7 @@ void  flood_fill(char **tab, t_point size, t_point begin)
     fill_helper(tab, size, begin.y, begin.x, target);
 }
 
-/*
+
 char** make_area(char** zone, t_point size)
 {
 	char** new;
@@ -151,4 +151,3 @@ int main(void)
 		printf("%s\n", area[i]);
 	return (0);
 }
-*/

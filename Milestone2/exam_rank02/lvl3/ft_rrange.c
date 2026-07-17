@@ -20,34 +20,43 @@ Examples:
 
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 int     *ft_rrange(int start, int end)
 {
-	int	*result;
-	int		i;
-	int		len;
+    int len = 0;
+    int i = 0;
+    int *range;
 
-	i = 0;
-	len = abs(end - start + 1);
-	result = (int *)malloc(len);
-	while (i < len)
-	{
-		if (end <= start)
-			result[i++] = end++;
-		else if (end >= start)
-			result[i++] = end--;
-	}
-	return(result);
+    if (start < end)
+    {
+        len = end - start + 1;
+        range = malloc(len);
+        while(start <= end)
+        {
+            range[i] = end;
+            i++;
+            end--;
+        }        
+    }
+    else
+    {
+        len = start - end + 1;
+        range = malloc(len);
+        while(start >= end)
+        {
+            range[i] = end;
+            i++;
+            end++;
+        }        
+    }
+    return(range);
 }
- 
-int	main(int argc, char **argv)
+
+int main(int ac, char **av)
 {
-	if (argc == 3)
-		{	
-		printf("%ls", ft_rrange(atoi(argv[1]), atoi(argv[2])));
-		//free();
-		}
-	printf("\n");
-	return(0);
+    int *range = ft_rrange(0, -3);
+
+    printf("%d, %d, %d, %d\n", range[0], range[1], range[2], range[3]);
 }

@@ -100,7 +100,7 @@ int main(int argc, char **argv)
     int num;
     int res;
 
-    if (argc != 2)
+    if (argc == 2)
     {
         i = 1;
         num = ft_atoi(argv[1]);

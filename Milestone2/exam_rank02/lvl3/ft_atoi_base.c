@@ -19,6 +19,8 @@ Your function must be declared as follows:
 
 int	ft_atoi_base(const char *str, int str_base);*/
 
+#include <stdio.h>
+
 int is_space(char c)
 {
     if ((c == 32) || ((c >= 9) && (c <= 13)))
@@ -67,4 +69,10 @@ int	ft_atoi_base(const char *str, int str_base)
         i++;
     }
     return (result * sign);
+}
+
+
+int main()
+{
+    printf("%d\n", ft_atoi_base("F", 16));
 }
